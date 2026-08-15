@@ -4,7 +4,5 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
-    groups:
-      postpipe-core:
-        patterns:
-          - "postpipe-connector-core"
+    allow:
+      - dependency-name: "postpipe-connector-core"
