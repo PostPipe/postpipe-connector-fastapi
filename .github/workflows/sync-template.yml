@@ -1,0 +1,35 @@
+﻿name: Sync Upstream Template
+
+on:
+  schedule:
+    # Run every day at 00:00 UTC
+    - cron: '0 0 * * *'
+  workflow_dispatch: # Allows manual trigger from GitHub Actions tab
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  sync-template:
+    runs-on: ubuntu-latest
+    # Skip running if executed inside the source template repository itself
+    if: github.repository != 'PostPipe/postpipe-connector-fastapi' && github.repository != 'Sourodip-1/postpipe-connector-fastapi'
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Sync with template
+        uses: AndreasAugustin/actions-template-sync@v2
+        with:
+          source_repo_path: PostPipe/postpipe-connector-fastapi
+          upstream_branch: main
+          pr_title: 'chore(template): sync updates from upstream template'
+          pr_commit_msg: 'chore(template): sync updates from upstream template'
+          pr_branch_name_prefix: postpipe-template-sync
+          pr_description: |
+            ### 🔄 Automated Template Sync
+            
+            This automated PR synchronizes your connector repository with the latest official updates from [`PostPipe/postpipe-connector-fastapi`](https://github.com/PostPipe/postpipe-connector-fastapi).
+            
+            Please review the changes and merge to keep your connector up-to-date with security patches and new features.
