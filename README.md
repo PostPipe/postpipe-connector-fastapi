@@ -1,4 +1,4 @@
-# PostPipe FastAPI Connector
+# PostPipe FastAPI Connector V2
 
 This is a self-hosted connector for [PostPipe](https://postpipe.in) built in Python (FastAPI).
 It acts as a secure bridge between PostPipe's Ingest API and your private database.
@@ -37,15 +37,18 @@ The connector is configured to be deployed to Vercel as a Serverless Function ou
 ### Steps:
 
 1. **Install Vercel CLI** (if not already installed):
+
    ```bash
    npm i -g vercel
    ```
 
 2. **Deploy via Vercel CLI**:
    Navigate to the `static-system/my-connector-fastapi` directory and run:
+
    ```bash
    vercel
    ```
+
    Follow the prompts to link the project and deploy it.
 
 3. **Configure Environment Variables**:
