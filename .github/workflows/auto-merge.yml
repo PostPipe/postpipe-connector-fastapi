@@ -20,3 +20,13 @@ jobs:
         env:
           PR_URL: ${{github.event.pull_request.html_url}}
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+  template-sync:
+    runs-on: ubuntu-latest
+    if: startsWith(github.event.pull_request.head.ref, 'postpipe-template-sync')
+    steps:
+      - name: Approve and Merge
+        run: gh pr merge --auto --merge "$PR_URL"
+        env:
+          PR_URL: ${{github.event.pull_request.html_url}}
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}

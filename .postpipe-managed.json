@@ -1,0 +1,9 @@
+[
+    "requirements.txt",
+    "app/",
+    "api/",
+    ".github/",
+    "vercel.json",
+    "Dockerfile",
+    "README.md"
+]
