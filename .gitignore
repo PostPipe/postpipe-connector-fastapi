@@ -108,3 +108,6 @@ venv.bak/
 .idea/
 *.swp
 *.swo
+.kontext/memory.db
+.kontext/memory.db-shm
+.kontext/memory.db-wal
