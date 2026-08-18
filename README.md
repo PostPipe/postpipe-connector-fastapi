@@ -1,4 +1,4 @@
-# PostPipe FastAPI Connector V3 fix-1
+# PostPipe FastAPI Connector V3 fix-2
 
 This is a self-hosted connector for [PostPipe](https://postpipe.in) built in Python (FastAPI).
 It acts as a secure bridge between PostPipe's Ingest API and your private database.
