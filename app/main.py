@@ -5,13 +5,7 @@ from postpipe_connector_core.main import create_postpipe_app
 
 app = create_postpipe_app()
 
-@app.get("/api/postpipe/health")
-async def health_check():
-    return JSONResponse(status_code=200, content={"status": "ok", "message": "Connector is healthy"})
 
-@app.get("/health")
-async def simple_health_check():
-    return JSONResponse(status_code=200, content={"status": "ok", "message": "Connector is healthy"})
 
 
 if __name__ == "__main__":
